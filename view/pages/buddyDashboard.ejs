@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitKnight</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/card.css" />
+  </head>
+  <body>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="container-main">
+      <div class="container1">
+        <div class="search-cont">
+          <form class="d-flex search" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <div>
+          <div class="cards buddies">
+            <% for(let user of data) {%>
+            <div class="card border-success mb-3 card-eles">
+              <div class="card-header header">
+                <img class="profile" src="<%= user.image %>" alt="" />
+                <h5 class="username"><%= user.username %></h5>
+              </div>
+
+              <p class="card-body text-success">
+                <b>Goals:</b><%= user.goals %>
+              </p>
+              <p class="card-body text-success">
+                <b>Preferences:</b> <%= user.preferences %>
+              </p>
+              <p class="card-body text-success">
+                <b>Availability:</b> <%= user.availability%>
+              </p>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="row grps">
+          <% for(let group of groups){ %>
+          <div class="card col-2 row-2 card-req">
+            <div class="card-body">
+              <h5 class="card-title"><%= group.name %></h5>
+              <p class="card-text"><%=group.organiser %></p>
+            </div>
+
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/script.js"></script> -->
+  </body>
+</html>
+
+<!-- added bootstrap links for styles and also for js -->

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitKnight</title>
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/group.css" />
+  </head>
+  <body>
+    <div class="container-main">
+      <div
+        style="position: sticky; top: 0; z-index: 1000"
+        class="p-3 mb-2 bg-success text-white navbar"
+      >
+        <h2><%= group.name %></h2>
+
+        <button
+          class="btn btn-primary member-btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          Members
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+              Group members
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body members-list">
+            <% for(let i=0;i<group.users.length;i++){ %>
+            <div class="card border-success member">
+              <div class="grp-next">
+                <img
+                  src="https://images.unsplash.com/photo-1734108039189-f6c123288381?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                  class="member-img"
+                />
+                <p class="card-body text-success"><%= group.users[i].username %></p>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="container-bottom">
+        <div class="card card-body text-success border-success">
+          <div class="groupDetails">
+            <div class="top">
+              <div class="schedule">
+                <h3 class="card-title card-header text-secondary">Schedule:</h3>
+                <p><b>Focused activities: </b>[<%= group.activities%>]</p>
+                <p><b>Time: </b>[<%= group.time %>]</p>
+                <p><b>frequency: </b>[<%= group.frequency %>]</p>
+                <p><b>Location: </b>[<%= group.location%>]</p>
+              </div>
+              <div class="desBtn">
+                <button
+                  class="btn btn-info btn-large"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#description"
+                  aria-expanded="false"
+                  aria-controls="description"
+                >
+                  Description
+                </button>
+                <button
+                  class="btn btn-info btn-large"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#organiser"
+                  aria-expanded="false"
+                  aria-controls="organiser"
+                >
+                  Organiser
+                </button>
+              </div>
+            </div>
+
+            <div class="collapse bottom" id="description">
+              <h3 class="card-title card-header text-secondary">
+                Description:
+              </h3>
+              <p>
+                "Welcome to <%= group.name %>, where fitness meets fun and
+                community! Our group is dedicated to helping individuals achieve
+                their health and wellness goals. Whether you’re a seasoned
+                enthusiast or just starting out, you’ll find a supportive
+                environment to grow stronger, healthier, and more confident.
+                <br />
+                Whether in workplaces, schools, or communities, groups play a
+                vital role in fostering cooperation, improving efficiency, and
+                achieving shared goals."
+              </p>
+            </div>
+
+            <div class="collapse bottom" id="organiser">
+              <h3 class="card-title card-header text-secondary">Organiser:</h3>
+              <p><b>Name:  </b><%= orgUsername%></p>
+              <p><b>Mobile no:  </b><%= buddy[0].mobile%></p>
+              <p><b>Gmail:  </b><%= buddy[0].gmail%></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="member-list">
+          <p><%= info.users %></p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/script.js"></script> -->
+  </body>
+</html>
+
+<!-- added bootstrap links for styles and also for js -->

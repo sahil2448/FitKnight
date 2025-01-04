@@ -1,0 +1,40 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 70vh;
+}
+.c-btns .choice-btn {
+  background-color: rgb(66, 239, 66);
+  color: black;
+  padding: 20px;
+  border-radius: none;
+}
+.c-btns .choice-btn:hover {
+  border-radius: 50px;
+}
+
+.c-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* margin-top: 10%; */
+}
+.container-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.headings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  line-height: 5px;
+  color: rgb(25, 94, 25);
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css/signup.css" /> -->
+    <link rel="stylesheet" href="/css/choice.css" />
+  </head>
+  <body>
+    <div class="container-main">
+      <div class="headings">
+        <h1>Hello @<%= buddy.username %>...!</h1>
+        <h1>You are now part of FitKnight family</h1>
+      </div>
+
+      <div class="container-inner">
+        <div class="c-btns">
+          <form action="/buddyDashboard" method="get">
+            <button class="choice-btn">
+              <h2>Find workout buddy</h2>
+            </button>
+          </form>
+          <form action="/organiserInfo" method="get">
+            <button class="choice-btn">
+              <h2>Create a fitness group</h2>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

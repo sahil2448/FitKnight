@@ -1,0 +1,89 @@
+body {
+  background-color: rgb(244, 244, 244);
+}
+.form{
+  width: 30%;
+}
+.form-extra {
+  width: 45%;
+
+
+}
+.container-main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-ele {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.signup-btn {
+  background-color: rgb(28, 232, 28);
+  /* background-color: rgb(66, 239, 66); */
+  color: black;
+  padding: 5px;
+  border-radius: none;
+}
+.signup-btn:hover {
+  border-radius: 50px;
+}
+
+.container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* border: 1px solid black; */
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid rgb(25, 94, 25);
+  border-radius: 5px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.heading {
+  display: flex;
+  color: rgb(25, 94, 25);
+  align-self: center;
+}
+.form-label {
+  font-weight: 500;
+}
+
+.inp {
+  background-color: rgb(244, 244, 244);
+  border: solid 1px rgb(65, 63, 63);
+}
+
+.inp::placeholder {
+  color: rgb(48, 46, 46);
+}
+
+.two-eles {
+  display: flex;
+  gap: 3rem;
+}
+
+.three-eles{
+  display: flex;
+  justify-content: space-between;
+}
+.personal{
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.two-eles{
+  display: flex;
+  justify-content: space-between;
+}
+.availability{
+  width: 50%;;
+}

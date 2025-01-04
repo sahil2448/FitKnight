@@ -1,0 +1,113 @@
+.body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.cards {
+  /* border: 1px solid black; */
+  width: 100%;
+  /* padding: 2rem; */
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-wrap: wrap;
+}
+
+.card-eles {
+  width: 100%;
+  /* border: 1px solid black; */
+  background-color: white;
+  line-height: 0rem;
+
+  /* color: #29b029; */
+  /* padding: 1rem; */
+}
+.heading {
+  color: rgb(25, 94, 25);
+}
+.dash {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.search {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  /* padding: 2rem; */
+}
+
+.profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 80vh;
+}
+.container1 {
+  padding: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 80vh;
+  overflow-y: auto;
+}
+.containe2 {
+  width: 50%;
+  margin: 0 0;
+  padding: 0 0;
+  height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-req {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+.grps {
+  display: flex;
+  height: 80vh;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.buddies {
+  margin-top: 10;
+}
+
+.req-btns {
+  display: flex;
+  margin: 0 0;
+  padding: 0 0;
+  gap: 5rem;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitKnight</title>
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/organiser.css" />
+  </head>
+  <body>
+    <div><h1>Edit the information</h1></div>
+    <div class="container-main">
+      <form
+        novalidate
+        class="needs-validation form"
+        action="/groupDashboard/<%= info._id %>?_method=PUT"
+        method="post"
+      >
+        <div class="container-ele form-check">
+          <h2 class="heading">Your group schedule is <%= info.activities %></h2>
+
+          <div class="two-containers">
+            <div>
+              <label for="activities" class="form-label">Activity type:</label
+              ><br />
+              <ul>
+                <input type="checkbox" name="activities[]" value="running"
+                class="form-check-input" <%= info.activities.includes('running')
+                ? 'checked' : '' %> /> Running<br />
+                <input type="checkbox" name="activities[]" value="yoga"
+                class="form-check-input" <%= info.activities.includes('yoga') ?
+                'checked' : '' %> /> Yoga<br />
+                <input type="checkbox" name="activities[]" value="cycling"
+                class="form-check-input" <%= info.activities.includes('cycling')
+                ? 'checked' : '' %> /> Cycling<br />
+                <input type="checkbox" name="activities[]" value="dance"
+                class="form-check-input" <%= info.activities.includes('dance') ?
+                'checked' : '' %> /> Dance<br />
+                <input type="checkbox" name="activities[]" value="crossFit"
+                class="form-check-input" <%=
+                info.activities.includes('crossFit') ? 'checked' : '' %> />
+                CrossFit<br />
+              </ul>
+              <div class="invalid-feedback">
+                Please fill atleast one checkbox
+              </div>
+            </div>
+            <div>
+              <label for="location" class="form-label">Location:</label><br />
+              <ul>
+                <input type="checkbox" name="location[]" value="gym"
+                class="form-check-input" <%= info.location.includes('gym') ?
+                'checked' : '' %> /> Gym<br />
+                <input type="checkbox" name="location[]" value="virtual"
+                class="form-check-input" <%= info.location.includes('virtual') ?
+                'checked' : '' %> /> Virtual<br />
+                <input type="checkbox" name="location[]" value="neighborhood"
+                class="form-check-input" <%=
+                info.location.includes('neighborhood') ? 'checked' : '' %> />
+                Neighborhood<br />
+                <input type="checkbox" name="location[]" value="flexible"
+                class="form-check-input" <%= info.location.includes('flexible')
+                ? 'checked' : '' %> /> Flexible (To be determined)<br />
+              </ul>
+
+              <div class="invalid-feedback">
+                Please fill atleast one checkbox
+              </div>
+            </div>
+            <div>
+              <label for="frequency" class="form-label">Frequency:</label><br />
+
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                name="frequency"
+              >
+                <option selected value="none">Frequency</option>
+                <option value="daily">daily</option>
+                <option value="weekly">weekly</option>
+                <option value="bi-weekly">bi-weekly</option>
+                <option value="other">other</option>
+              </select>
+              <div class="invalid-feedback">
+                it's necessary to fill above info.
+              </div>
+            </div>
+            <div>
+              <label for="time" class="form-label">Time:</label><br />
+              <input
+                type="time"
+                name="time"
+                class="form-control"
+                value="<%= info.time %>"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="name" class="form-label">Organiser:</label><br />
+            <input
+              type="text"
+              name="organiser"
+              placeholder="Organiser name !"
+              class="form-control"
+              id="on"
+              value="<%= info.organiser %>"
+            />
+          </div>
+          <div>
+            <label for="name" class="form-label">Group name:</label><br />
+            <input
+              type="text"
+              name="name"
+              placeholder="Let's have a fantastic Group-name !!!"
+              class="form-control"
+              id="gn"
+              value="<%= info.name %>"
+            />
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/script.js"></script> -->
+  </body>
+</html>

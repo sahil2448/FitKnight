@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitKnight</title>
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="/css/buddy.css" /> -->
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <div class="container-main extra">
+      <form
+        novalidate
+        class="needs-validation form form-extra"
+        action="/buddyInfo"
+        method="post"
+      >
+      <div class="container-inner">
+        <h1 class="heading">Signup</h1>
+        <div class="container-ele container-ele2 form-check">
+            <div class="three-eles">
+          <div>
+            <label for="username" class="form-label">Fitness goals:</label
+            ><br />
+            <ul>
+              <input
+                type="checkbox"
+                name="goals[]"
+                value="weight-loss"
+                class="form-check-input inp" 
+              />
+              Weight Loss<br />
+              <input
+                type="checkbox"
+                name="goals[]"
+                value="muscle-gain"
+                class="form-check-input inp" 
+              />
+              Muscle Gain<br />
+              <input
+                type="checkbox"
+                name="goals[]"
+                value="endurance"
+                class="form-check-input inp" 
+              />
+              Endurance<br />
+              <input
+                type="checkbox"
+                name="goals[]"
+                value="flexibility"
+                class="form-check-input inp" 
+              />
+              Flexibility<br />
+            </ul>
+            <div class="invalid-feedback">Please enter your fitness goal</div>
+          </div>
+          <div>
+            <label for="username" class="form-label">Workout preferences:</label
+            ><br />
+            <ul>
+              <input
+                type="checkbox"
+                name="preferences[]"
+                value="gym"
+                class="form-check-input inp" 
+              />
+              Gym<br />
+              <input
+                type="checkbox"
+                name="preferences[]"
+                value="yoga"
+                class="form-check-input inp" 
+              />
+              Yoga<br />
+              <input
+                type="checkbox"
+                name="preferences[]"
+                value="running"
+                class="form-check-input inp" 
+              />
+              Running<br />
+            </ul>
+            <div class="invalid-feedback">
+              Please enter your workout preference
+            </div>
+          </div>
+          <div >
+            <label for="personal" class="form-label">Personal:</label
+              >
+              <div class="personal">
+              <input type="number" name="mobile" placeholder="Enter mobile no" class="form-control inp" required />
+            <div class="invalid-feedback">Please enter mobile no..!</div>
+              <input type="text" name="gmail" placeholder="Enter gmail" class="form-control inp" required />
+            <div class="invalid-feedback">Please enter gmail..?</div>
+          </div>
+        </div>
+        </div>
+        <div class="two-eles">
+          <div class="availability">
+            <label for="username" class="form-label">Availability:</label><br />
+
+            <select
+              class="form-select inp"
+              aria-label="Default select example"
+              name="availability"
+              
+            >
+              <option selected value="none">Availability</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+            <div class="invalid-feedback">Please enter your available time</div>
+          </div>
+          <div>
+            <label for="image" class="form-label">Profile picture</label>
+            <input type="file" name="image" class="form-control  inp">
+          </div>
+        </div>
+          <button type="submit" class="signup-btn">Signup</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/script.js"></script> -->
+  </body>
+</html>
