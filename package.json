@@ -9,9 +9,6 @@
   "scripts": {
     "build:css": "tailwindcss -i ./styles.css -o ./output.css --watch"
   },
-  "scripts": {
-  "start": "node index.js"
-},
   "keywords": [],
   "author": "",
   "license": "ISC",
