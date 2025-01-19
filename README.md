@@ -1,4 +1,4 @@
-# FitKnight: Rise of the Fitness Crusaders 🏋️‍♂️
+# FitKnight: 🏋️‍♂️
 
 ## Overview
 
@@ -29,7 +29,7 @@ FitKnight is a fitness buddy finder platform that connects people with similar f
 
 ### Profile System 👤
 
-- Customizable user profiles
+-  user profiles
 - Fitness history tracking
 - Privacy settings for contact information
 - Separate profiles for individuals and group organizers
