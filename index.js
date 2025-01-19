@@ -77,6 +77,10 @@ passport.deserializeUser(User.deserializeUser());
 // serializeUser() Generates a function that is used by Passport to serialize users into the session
 // deserializeUser() Generates a function that is used by Passport to deserialize users into the session
 // Route to render the signup page
+app.get("/", (req, res) => {
+  res.render("pages/signup");
+});
+
 app.get("/signup", (req, res) => {
   res.render("pages/signup");
 });
