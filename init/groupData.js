@@ -2,7 +2,7 @@ let mongoose = require("mongoose");
 const sampleGroups = [
   {
     name: "Morning Yoga Club",
-    organiser: "Man", // Only username for organiser
+    organiser: "Atul", // Only username for organiser
     users: [new mongoose.Types.ObjectId("507f1f77bcf86cd799439011")],
     activities: ["Yoga", "Meditation"],
     location: ["Mumbai", "Bandra"],
@@ -11,7 +11,7 @@ const sampleGroups = [
   },
   {
     name: "Morning Yoga Club",
-    organiser: "deepika_padukone",
+    organiser: "Chaitanya",
     users: [
       [new mongoose.Types.ObjectId("507f1f77bcf86cd799439011")],
       [new mongoose.Types.ObjectId("507f1f77bcf86cd799439011")],
@@ -35,7 +35,7 @@ const sampleGroups = [
   },
   {
     name: "Zumba Lovers",
-    organiser: "alia_bhatt",
+    organiser: "Animesh",
     users: [
       [new mongoose.Types.ObjectId("507f1f77bcf86cd799439011")],
       [new mongoose.Types.ObjectId("507f1f77bcf86cd799439011")],

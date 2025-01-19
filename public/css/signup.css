@@ -1,17 +1,15 @@
 body {
   background-color: rgb(244, 244, 244);
 }
-.form{
+/* .form{
   width: 30%;
 }
 .form-extra {
-  width: 45%;
-
-
-}
+  width: 30%;
+} */
 .container-main {
   width: 100%;
-  height: 100vh;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +28,7 @@ body {
   color: black;
   padding: 5px;
   border-radius: none;
+  transition: 0.5s ease border-radius;
 }
 .signup-btn:hover {
   border-radius: 50px;
@@ -39,19 +38,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 30rem;
   /* border: 1px solid black; */
   padding: 2rem;
   background-color: white;
   border: 1px solid rgb(25, 94, 25);
   border-radius: 5px;
-  /* justify-content: center;
-  align-items: center; */
+
 }
 
 .heading {
   display: flex;
   color: rgb(25, 94, 25);
   align-self: center;
+  font-size: 2.5rem;
 }
 .form-label {
   font-weight: 500;
@@ -68,7 +68,8 @@ body {
 
 .two-eles {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  /* gap: 3rem; */
 }
 
 .three-eles{
@@ -85,5 +86,32 @@ body {
   justify-content: space-between;
 }
 .availability{
-  width: 50%;;
+  width: 100%;;
+}
+
+
+@media (max-width: 400px) {
+  .container-main{
+    justify-content: center;
+  }
+  .container-inner{
+    width:90vw;
+    /* width: 100rem; */
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+  }
+  .container-inner-buddy-info{
+    padding: 1rem;
+    /* margin-top: 4rem; */
+    /* margin-bottom: 3rem; */
+  }
+}
+@media (max-width: 530px) {
+  .container-main{
+    justify-content: center;
+  }
+  .container-inner{
+    width:90vw;
+    /* width: 100rem; */
+  }
 }

@@ -1,24 +1,19 @@
-body{
-    
-}
-.organiser ul{
 
-}
 .card-body{
     width: 50%;
+    /* background-color: aqua; */
 }
 .container-bottom{
     padding: 1rem;
 }
 .navbar{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 2rem;
 }
 .member-btn{
     display: flex;
     justify-self:right;
-
 }
 .member-img{
     height: 3rem;
@@ -35,12 +30,20 @@ body{
     justify-content: center;
     align-items: center;
     margin-left: 2rem;
-
 }
 .member{
     display: flex;
     justify-content: flex-start;
-    
+    opacity: 1;
+    transition: ease 0.3s background;
+    cursor: pointer;
+}
+.member:hover{
+    /* opacity: 0.9; */
+    /* background-color: rgb(8, 127, 99); */
+    background-color: rgb(201, 207, 207);
+    /* color: white; */
+    text:white
 }
 .top{
     display: flex;
@@ -74,4 +77,60 @@ body{
     border-radius: 5px;
     background-color: #ffffff; /* White background */
     color: rgb(8, 127, 99);
+}
+
+@media (max-width: 1100px) {
+    .card-body{
+        width: 80%;
+        /* background-color: rgb(15, 30, 30); */
+    }
+}
+@media (max-width: 760px) {
+    .card-body{
+        width: 90%;
+        /* background-color: rgb(15, 30, 30); */
+    }
+    .desBtn{
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .desBtn button{
+        width: 100%;
+        font-size: 70%;
+    }
+}
+@media (max-width: 400px) {
+    .card-body{
+        /* margin: auto; */
+        width: 100%;
+        padding: 0;
+    }
+    /* .desBtn button{
+        width: 100%;
+        font-size: 40%;
+        
+    } */
+     .grp-next{
+        gap: 1rem;
+        padding: 3px;
+     }
+
+    .members-list{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem ;
+    }
+ 
+    .top{
+        display: flex;
+        flex-direction: column;
+    }
+    .desBtn{
+        display: flex;
+        flex-direction: row;
+        margin: 0 1rem;
+        margin-bottom: 5px;
+    }
 }

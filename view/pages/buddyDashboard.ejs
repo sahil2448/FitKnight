@@ -26,56 +26,78 @@
     <link rel="stylesheet" href="/css/card.css" />
   </head>
   <body>
-    <%- include("../includes/navbar.ejs") %>
-    <div class="container-main">
-      <div class="container1">
-        <div class="search-cont">
-          <form class="d-flex search" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-        <div>
-          <div class="cards buddies">
-            <% for(let user of data) {%>
-            <div class="card border-success mb-3 card-eles">
-              <div class="card-header header">
-                <img class="profile" src="<%= user.image %>" alt="" />
-                <h5 class="username"><%= user.username %></h5>
-              </div>
+    <!-- <%- include("../includes/navbar.ejs") %> -->
+    <div
+        style="position: sticky; top: 0; z-index: 1000"
+        class="p-3 mb-2 bg-success text-white navbar d-flex justify-content-between">
+      <div><h4>Dashboard</h4></div>
+      <div class="search-cont" style="width: 40vw;">
+        <form class="d-flex search" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            style="background-color: rgb(238, 255, 248);"
+          />
+          <button class="btn btn-info" type="submit">Search</button>
+        </form>
+      </div>
 
-              <p class="card-body text-success">
-                <b>Goals:</b><%= user.goals %>
-              </p>
-              <p class="card-body text-success">
-                <b>Preferences:</b> <%= user.preferences %>
-              </p>
-              <p class="card-body text-success">
-                <b>Availability:</b> <%= user.availability%>
-              </p>
+      <div class="d-flex gap-4 " style="margin-right: 3rem;">
+        <div class="nav-item dropdown bg-info p-2">
+        <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </a>
+        <ul class="dropdown-menu">
+          <form action="/buddyDashboard/buddyProfile" method="get"">
+            <button type="submit" class="dropdown-item">Profile</button>
+          </form>
+          <form action="/choice" method="get">
+            <button class="dropdown-item" type="submit">Create group</button>
+          </form>
+          <form action="/signup" method="get">
+            <button class="dropdown-item" type="submit">Log out</button>
+          </form>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-main">
+      <div class="inners">
+        <div class="container1">
+          <div class="inner1">
+            <div class="cards buddies">
+              <% for(let user of data) {%>
+              <form action="/buddyDashboard/<%= user._id %>/Profile" method="get">
+                  <div class="card mb-2 card-eles" onclick="this.closest('form').submit();">
+                    <div class="card-header d-felx"">
+                          <img class="profile" src="<%= user.image.url %>" alt="" />
+                          <div><h5 class="username"><%= user.username %></h5>
+                            <p><%= user.goals %></p>
+                          </div>
+                    </div>
+              </div>
+            </form>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="container2 d-flex justify-content-end align-items-end">
+          
+          <div class="grps">
+            <% for(let group of groups){ %>
+            <div class="card card-req d-flex flex-column">
+              <div class="card-body">
+                <h5 class="card-title"><%= group.name %></h5>
+                <p class="card-text"><%=group.organiser %></p>
+              </div>
+              <div class="join-btn d-flex justify-content-end p-2 w-100">
+                <button class="btn btn-dark btn-sm">Join</button>
+              </div>
             </div>
             <% } %>
           </div>
-        </div>
-      </div>
-      <div class="container2">
-        <div class="row grps">
-          <% for(let group of groups){ %>
-          <div class="card col-2 row-2 card-req">
-            <div class="card-body">
-              <h5 class="card-title"><%= group.name %></h5>
-              <p class="card-text"><%=group.organiser %></p>
-            </div>
-
-          </div>
-          <% } %>
         </div>
       </div>
     </div>

@@ -4,25 +4,44 @@
   overflow-y: hidden;
 }
 
+.card-header{
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  background-color:white;
+  border: none;
+  transition: 0.1s ease background-color;
+
+}
+
+.card-header:hover{
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
 .cards {
   /* border: 1px solid black; */
   width: 100%;
   /* padding: 2rem; */
   display: flex;
-  gap: 8px;
+  /* gap: 8px; */
   flex-direction: row;
   flex-wrap: wrap;
   text-wrap: wrap;
+  
 }
 
 .card-eles {
-  width: 100%;
-  /* border: 1px solid black; */
+  width: 25vw;
   background-color: white;
-  line-height: 0rem;
+  /* border: white; */
+  /* border: 1px solid white; */
+  /* line-height: 0rem; */
+  /* height: 8rem; */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid gray;
 
-  /* color: #29b029; */
-  /* padding: 1rem; */
 }
 .heading {
   color: rgb(25, 94, 25);
@@ -33,17 +52,10 @@
   z-index: 1000;
 }
 
-.search {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  /* padding: 2rem; */
-}
 
 .profile {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50px;
 }
 .header {
@@ -54,31 +66,39 @@
 
 .container-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  justify-self: center;
+  /* align-items: center; */
+  align-self: center;
   width: 100%;
   height: 80vh;
 }
+
 .container1 {
-  padding: 2rem;
-  margin-top: 1rem;
+  /* padding: 1rem; */
+  /* margin-top: 1rem; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  width: 50%;
+  width: 35rem;
   height: 80vh;
+
+  padding: 0 0;
+  margin: 0 0;
+  margin-left: 2rem;
+  /* height: 100%; */
   overflow-y: auto;
 }
 .containe2 {
   width: 50%;
-  margin: 0 0;
-  padding: 0 0;
   height: 80vh;
   overflow-y: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: flex-end;
+  align-self: flex-end;
 }
 
 .card-req {
@@ -88,21 +108,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20%;
+  border: 1px solid rgb(22, 126, 4);
+  height: 25%;
 }
+
+.card-req:hover {
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
+
 .grps {
   display: flex;
   height: 80vh;
   overflow-y: auto;
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 0 0;
   margin: 0 0;
-  width: 100%;
-  justify-content: center;
+  width: 90%;
+  justify-self: flex-end;
+  /* align-self: flex-end; */
 }
 
 .buddies {
-  margin-top: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
 }
 
 .req-btns {
@@ -110,4 +144,17 @@
   margin: 0 0;
   padding: 0 0;
   gap: 5rem;
+}
+.inner1{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-self: center;
+  align-items: center;
+}
+
+.inners{
+  display: flex;
+  margin-top: 3rem;
+  /* height: 100vh; */
 }

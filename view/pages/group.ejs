@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitKnight</title>
-    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,10 +29,29 @@
     <div class="container-main">
       <div
         style="position: sticky; top: 0; z-index: 1000"
-        class="p-3 mb-2 bg-success text-white navbar"
+        class="p-3 mb-2 bg-success text-white navbar d-flex justify-content:center"
       >
-        <h2><%= group.name %></h2>
-
+        <h4><%= group.name %></h4>
+        <div class="d-flex gap-4">
+          <div class="nav-item dropdown bg-info p-2">
+          <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <form action="/groupDashboard/<%= group._id %>/group/profile" method="get"">
+               <button type="submit" class="dropdown-item">Profile</button>
+            </form>
+            <form action="/groupDashboard/<%= group._id %>" method="get">
+              <button type="submit"  class="dropdown-item">Dashboard</button>
+            </form>
+            <form action="/choice" method="get">
+              <button class="dropdown-item" type="submit">Find buddy</button>
+            </form>
+            <form action="/signup" method="get">
+              <button class="dropdown-item" type="submit">Log out</button>
+            </form>
+          </ul>
+        </div>
         <button
           class="btn btn-primary member-btn"
           type="button"
@@ -43,6 +61,10 @@
         >
           Members
         </button>
+      </div>
+        
+        
+        
 
         <div
           class="offcanvas offcanvas-end"
@@ -63,22 +85,24 @@
           </div>
           <div class="offcanvas-body members-list">
             <% for(let i=0;i<group.users.length;i++){ %>
-            <div class="card border-success member">
+            <form action="/groupDashboard/<%= group._id %>/group/<%= group.users[i]._id  %>/profile" method="get">
+            <div class="card border-success member" onclick="this.closest('form').submit();">
               <div class="grp-next">
                 <img
-                  src="https://images.unsplash.com/photo-1734108039189-f6c123288381?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="<%= group.users[i].image.url %>"
                   alt=""
                   class="member-img"
                 />
                 <p class="card-body text-success"><%= group.users[i].username %></p>
               </div>
             </div>
+          </form>
             <% } %>
           </div>
         </div>
       </div>
       <div class="container-bottom">
-        <div class="card card-body text-success border-success">
+        <div class="card card-body text-success border-success d-flex" style="margin: auto;">
           <div class="groupDetails">
             <div class="top">
               <div class="schedule">
@@ -100,7 +124,7 @@
                   Description
                 </button>
                 <button
-                  class="btn btn-info btn-large"
+                  class="btn btn-info btn-large "
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#organiser"
@@ -149,7 +173,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="/js/script.js"></script> -->
   </body>
 </html>
 

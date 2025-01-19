@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitKnight</title>
-    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,6 +27,7 @@
   </head>
   <body>
     <!-- <div><h1>group information</h1></div> -->
+    <%- include("../includes/post.ejs") %>
     <div class="container-main">
       <form
         novalidate
@@ -82,7 +82,7 @@
                 Please fill atleast one checkbox
               </div>
             </div>
-            <div>
+            <div class="location">
               <label for="username" class="form-label">Location:</label><br />
               <ul>
                 <input
@@ -112,39 +112,40 @@
                   value="flexible"
                   class="form-check-input inp"
                 />
-                Flexible (To be determined)<br />
+                Flexible<br />
               </ul>
 
               <div class="invalid-feedback">
                 Please fill atleast one checkbox
               </div>
             </div>
-            <div>
-              <label for="Schedule" class="form-label">Frequency:</label><br />
 
-              <select
-                class="form-select inp"
-                aria-label="Default select example"
-                name="frequency"
-              >
-                <option selected value="none">Frequency</option>
-                <option value="daily">daily</option>
-                <option value="weekly">weekly</option>
-                <option value="bi-weekly">bi-weekly</option>
-                <option value="other">other</option>
-              </select>
-              <div class="invalid-feedback">
-                it's necessary to fill above info.
-              </div>
-            </div>
-            <div>
+            <div class="time">
               <label for="time" class="form-label">Time:</label><br />
               <input type="time" name="time" class="form-control inp" />
             </div>
           </div>
 
           <div>
-            <!-- <label for="name" class="form-label">Organiser:</label><br /> -->
+            <!-- <label for="Schedule" class="form-label">Frequency:</label><br /> -->
+
+            <select
+              class="form-select inp freq"
+              aria-label="Default select example"
+              name="frequency"
+            >
+              <option selected value="none">Frequency</option>
+              <option value="daily">daily</option>
+              <option value="weekly">weekly</option>
+              <option value="bi-weekly">bi-weekly</option>
+              <option value="other">other</option>
+            </select>
+            <div class="invalid-feedback">
+              it's necessary to fill above info.
+            </div>
+          </div>
+
+          <div>
             <input
               type="text"
               name="organiser"
@@ -154,13 +155,11 @@
             />
           </div>
           <div>
-            <!-- <label for="name" class="form-label">Group name:</label><br /> -->
             <input
               type="text"
               name="name"
               placeholder="Group name !"
-              class="form-control inp"
-              id="gn"
+              class="form-control inp gn"
             />
           </div>
           <button type="submit" class="submit-btn">Create group</button>
@@ -177,6 +176,5 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="/js/script.js"></script> -->
   </body>
 </html>

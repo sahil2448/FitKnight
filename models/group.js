@@ -16,10 +16,6 @@ const groupSchema = new Schema({
       ref: "RequestUser", // This ensures that each entry in users is a reference to a User document
     },
   ],
-  // users: {
-  //   type: [String],
-  //   default: [""],
-  // },
 
   activities: {
     type: [String],

@@ -1,3 +1,6 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
 .container-main {
   display: flex;
   flex-direction: column;
@@ -9,8 +12,9 @@
 .c-btns .choice-btn {
   background-color: rgb(66, 239, 66);
   color: black;
-  padding: 20px;
+  padding: 4rem;
   border-radius: none;
+  transition: 0.5s ease border-radius;
 }
 .c-btns .choice-btn:hover {
   border-radius: 50px;
@@ -21,6 +25,8 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  font-family: 'Nunito', sans-serif;
+
   /* margin-top: 10%; */
 }
 .container-inner {
@@ -37,4 +43,37 @@
   gap: 0;
   line-height: 5px;
   color: rgb(25, 94, 25);
+  font-family: 'Poppins', sans-serif;
+}
+
+.subHeader{
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 860px) {
+  /* .c-btns{
+    flex-direction: column;
+  } */
+  .c-btns .choice-btn {
+    padding: 3rem;
+  }
+}
+@media (max-width: 780px) {
+  .c-btns{
+    flex-direction: column;
+  }
+  .c-btns .choice-btn {
+    width: 75vw;
+    padding: 4rem;
+  }
+}
+@media (max-width: 780px) {
+  .c-btns{
+    flex-direction: column;
+  }
+  .c-btns .choice-btn {
+    width: 75vw;
+    height: 20vh;
+    padding: 3rem;
+  }
 }

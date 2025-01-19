@@ -10,14 +10,15 @@ body {
 }
 
 .form {
-  width: 60%;
+  width: 40rem;
   border: solid 1px rgb(25, 94, 25);
   border-radius: 5px;
   padding: 3rem;
   background-color: white;
+  /* display: flex; */
 }
 
-#gn {
+.gn {
   width: 50%;
 }
 .form-label {
@@ -35,8 +36,9 @@ body {
 .submit-btn {
   background-color: rgb(66, 239, 66);
   color: black;
-  padding: 5px;
+  padding: 8px;
   border-radius: none;
+  transition: ease-out 0.3s border-radius;
 }
 .submit-btn:hover {
   border-radius: 50px;
@@ -45,8 +47,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  margin:auto;
+  margin-left: 0;
+  padding-left:0;
 }
 
+.freq{
+  width: 50%;
+
+}
 .organiser-name {
   width: 50%;
 }
@@ -58,4 +70,37 @@ body {
 
 .inp::placeholder {
   color: rgb(48, 46, 46);
+}
+
+@media (max-width: 670px) {
+  .form{
+    width: 95vw;
+    
+  }
+  .two-containers{
+    gap: 2rem;
+  }
+}
+@media (max-width: 580px) {
+  .two-containers{
+    flex-wrap: wrap;
+  }
+  .time{
+    width: 100%;
+  }
+  .organiser-name {
+    width: 100%;
+  }
+  .freq{
+    width: 100%;
+  }
+  .gn{
+    width: 100%;
+  }
+  .form{
+    padding: 1rem;
+  }
+  .heading{
+    font-size: 1.5rem;
+  }
 }
